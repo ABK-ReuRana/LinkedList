@@ -39,21 +39,21 @@ public class L1_Day{
        }
 
       // T:O(1), S:(1)    
-       void removeFirst(){
-          if(this.size==0){
+      public void removeFirst() {
+        if (this.size == 0) {
             System.out.println("List is empty");
             return;
-          }
+        }
 
-          ListNode newHead=head.next;
-          head.next=null;
-          this.head=newHead;
-          this.size--;
-
-          if(this.size==0){  // list size=1
-            this.head=this.tail=null;
-          }
-       }
+        if (this.size == 1) {
+            this.head = this.tail = null;
+        } else {
+            ListNode nHead = this.head.next;
+            this.head.next = null;
+            this.head = nHead;
+        }
+        this.size--;
+    }
 
 
 
